@@ -1,0 +1,12 @@
+.container{
+    margin-top: 30px;
+}
+
+.container2{
+    margin-top: 30px;
+}
+
+input.ng-invalid.ng-touched{
+    border:1px solid red;
+    box-shadow: 0 0 5px inset rgb(235, 112, 112);
+}

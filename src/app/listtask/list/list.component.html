@@ -1,0 +1,69 @@
+<nav class="navbar navbar-dark bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand">Welcome to GrowOn Teacher Dashboard </a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+      <button class="btn btn-light" type="button" (click)="logout()">
+        Logout
+      </button>
+  </div>
+  </div>
+</nav>
+<div class="container col-10 mt-2 mx-4"> 
+    <table class="table table-bordered">    
+      <thead class="table-light">
+        <tr class="table-light">
+          <th class="table-danger">Slno.</th>
+          <th class="table-danger">Assignment Name</th>
+          <th class="table-danger">Subject</th>
+          <th class="table-danger">Description</th>
+          <th class="table-danger">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let assignment of assignment; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ assignment.name }}</td>
+          <td>{{ assignment.subject }}</td>
+          <td>{{ assignment.description }} </td>
+           <td>  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button class="btn btn-warning me-md-2" type="button" (click)="Edit(i)" >Edit</button>
+                <button class="btn btn-danger" type="button" (click)="remove(i)">Remove</button>
+              </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div *ngIf="display">
+      <div class="form-group">
+        <form #assignpost="ngForm">
+          <div class="container1 mt-5">
+            <div class="card" style="width: 40rem">
+              <div class="container2">
+                <h2>Edit Assignment</h2>
+              </div>
+              <hr />
+        
+              <div class="container mt-3 mb-1 col-9">
+                <label class="form-label">Assignment Name </label>
+                <input name="AssignmentName" [(ngModel)]="studentObj.name" type="text" class="form-control" required />
+              </div>
+              <div class="container mb-1 col-9">
+                <label class="form-label">Subject Name </label>
+                <input name="Subject"   [(ngModel)]="studentObj.subject" type="text" class="form-control" />
+              </div>
+              <div class="container mb-5 col-9">
+                <label class="form-label">Description</label>
+                <textarea name="Description" [(ngModel)]="studentObj.description" class="form-control" rows="3"></textarea>
+              </div>
+              <button type="submit" class="btn btn-warning">Update</button>
+            </div>
+          </div>
+        </form>
+        </div>
+      </div>
+        
+      
+  

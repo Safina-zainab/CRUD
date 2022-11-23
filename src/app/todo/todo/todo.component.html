@@ -1,0 +1,37 @@
+<div>
+    <nav class="navbar navbar-dark bg-primary">
+        <!-- Navbar content -->
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">MY TODO LIST</a>
+            </li>
+          </ul>
+      </nav>
+    </div>
+    <div class="container mt-5 col-5" > 
+        <div class="input-group mb-3">
+          <input #mytask type="text" class="form-control" placeholder=" Enter Your Task" 
+          aria-label="Task Name" aria-describedby="button-addon2">
+        
+          <button class="btn btn-outline-success" type="button" id="button-addon2" 
+          (click)="addTodo(mytask)"> 
+            Add Task
+           </button>
+        </div>
+        <br>
+        <h2>My Current Task ({{tasklist.length}}) </h2>
+        <ul class="list-group">
+        
+          <li class="list-group-item" *ngFor="let task of tasklist;let i = index" >
+            {{ task }}
+            <div class="d-grid d-md-flex justify-content-md-end">
+               <!-- <button class="btn btn-warning me-md-1" type="button" (click)="edittodo(i)">Edit
+              </button> -->
+              <button class="btn btn-danger me-md-1" type="button" (click)="remtodo(i)">Delete
+              </button> </div>
+        
+          </li>
+        </ul>
+        
+        </div>
+        

@@ -1,0 +1,44 @@
+<nav class="navbar navbar-dark bg-warning">
+  <div class="container-fluid">
+    <a class="navbar-brand">Welcome to GrowOn Teacher Dashboard </a>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+
+      <button class="btn btn-light" type="button" (click)="add()">
+        Create Assignment
+      </button>
+      <button class="btn btn-light" type="button" (click)="logout()">
+        Log Out
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="display">
+<div class="form-group">
+  <form #assignpost="ngForm"  (ngSubmit)="onAssign(assignpost.value)">
+    <div class="container1 mt-5">
+      <div class="card" style="width: 40rem">
+        <div class="container2">
+          <h2>Create Assignment</h2>
+        </div>
+        <hr />
+  
+        <div class="container mt-3 mb-1 col-9">
+          <label class="form-label">Assignment Name </label>
+          <input name="name" ngModel type="text" class="form-control" required />
+        </div>
+        <div class="container mb-1 col-9">
+          <label class="form-label">Subject Name </label>
+          <input name="subject" ngModel type="text" class="form-control" />
+        </div>
+        <div class="container mb-5 col-9">
+          <label class="form-label">Description</label>
+          <textarea name="description" ngModel class="form-control" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-warning">Assign</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+  

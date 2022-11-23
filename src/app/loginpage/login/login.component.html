@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <nav class="navbar navbar-dark bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Welcome to GrowOn Login Page </a>
+    </div>
+  </nav>
+  <div class="container mt-5 col-3">
+    <div class="card" style="width: 25rem">
+      <div class="card-body">
+        <header><h3>Login Form</h3></header>
+        <br />
+        <form [formGroup]="myform" (ngSubmit)="OnSubmit()">
+          <div class="mb-3">
+            <label class="form-label">User Name </label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="username"
+              placeholder="User Name"
+              required/>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="password"
+              placeholder=" password"
+              required />
+          </div>
+          <div class="mt-4">
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,14 @@
+#container{
+    margin-top: 20px;
+    margin: 20px;
+}
+
+.container2{
+    color:gray;
+    align-self: center;
+    margin-top: 5px;
+}
+.container1{
+    align-items: center;
+    margin-left: 25%;
+}
